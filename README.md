@@ -33,6 +33,14 @@ The dataset used is the Enron-Spam dataset. It includes 5172 emails, stored in f
 ## Data Retrieval and Exploration
 We started by extracting emails from the dataset and storing them in a list called `raw_data_list`. Each email was labeled as either 'ham' or 'spam'. We used various visualizations, such as word clouds and bar plots, to understand the distribution and common words in the dataset.
 
+Th eimage below is the wordcloud from the Enron-Spam dataset.
+
+![Wordcloud](images/wordcloud.png)
+
+Below is the distribution of spam versus ham emails in the dataset.
+
+![Spam vs. Ham Distribution](images/spam-ham-distribution.png)
+
 ## Data Preprocessing
 Preprocessing steps included:
 1. **Shuffling Data**: Ensuring random selection of training and test sets.
@@ -51,12 +59,14 @@ We used the Naive Bayes classifier for model training. To evaluate the model, we
 
 ## Results
 The models were evaluated using different feature sets:
-- **Unigram Features**: Achieved the highest accuracy, around 95.42%.
+- **Unigram Features**: Achieved classification accuracy around 95.42%.
 - **Verb Phrase Features**: Less accurate compared to unigrams.
 - **Punctuation Features**: Second most accurate model after unigrams.
 - **Combination of Verb Phrases and Punctuation**: Improved accuracy over individual use.
 
-The balanced dataset models performed slightly better, achieving around 96.33% accuracy.
+The balanced dataset models performed slightly better, achieving around 96.33% accuracy. Below is the confusion matrix from the balanced dataset.
+
+![Confusion Matrix](images/confusion-matrix.png)
 
 ## Conclusion
 Natural language processing is effective in detecting spam emails. Our best model, based on unigram frequency distributions, achieved high accuracy. Future improvements could include integrating more grammatical elements, such as noun phrases and adjective phrases, into the feature sets.
@@ -66,9 +76,31 @@ Natural language processing is effective in detecting spam emails. Our best mode
 - **Sean Deery**
 
 ## Usage
-To run the project locally:
-1. Clone the repository: `git clone https://github.com/sdeery14/spam-classification.git`
-2. Run the notebook in Google Colab
+
+1. Clone the repository:
+
+```
+git clone https://github.com/sdeery14/spam-classification.git
+```
+
+2. Navigate to the project directory:
+
+```
+cd spam-classification
+```
+
+3. Install requirements
+
+```
+pip install -r requirements.txt
+```
+
+4. Run the spam classification:
+
+```
+python notebooks/spam-classification.py
+```
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
